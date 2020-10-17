@@ -1,32 +1,29 @@
-
-def preobr(x):
-	r = [x[0]]
-	i = 1
-	j = 0
-	while i < len(x):
-	    if r[j] != x[i]:
-	        r.append(x[i])
-	        j += 1
-	    i += 1
-	return r
-
 def solution(args):
 	z=[]
 	x=[]
 	N = len(args)
 	for j in range(N-2):
-		try:
-			if args[j+1]-args[j]==1 and args[j+2]-args[j+1]==1:
-				z.append(args[j+1])
-		except IndexError:
-			print(1)
+		if args[j+1]-args[j]==1 and args[j+2]-args[j+1]==1:
+			z.append(args[j+1])
 	ss = []
 	for e in args:
 		if not e in z:
 			ss.append(e)
 		else:
 			ss.append('-')
-	alp = preobr(ss)
+	####################
+
+	r = [ss[0]]
+	i = 1
+	j = 0
+	while i < len(ss):
+	    if r[j] != ss[i]:
+	        r.append(ss[i])
+	        j += 1
+	    i += 1
+
+	####################
+	alp = r
 	c = 0
 	while c < len(alp)-1 :
 		if type(alp[c]) is int and type(alp[c+1]) is int:
