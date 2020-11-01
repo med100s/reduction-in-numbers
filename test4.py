@@ -12,7 +12,6 @@ def solution(args):
 		else:
 			ss.append('-')
 	####################
-
 	r = [ss[0]]
 	i = 1
 	j = 0
@@ -21,7 +20,6 @@ def solution(args):
 	        r.append(ss[i])
 	        j += 1
 	    i += 1
-
 	####################
 	alp = r
 	c = 0
